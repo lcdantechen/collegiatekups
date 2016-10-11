@@ -1,0 +1,54 @@
+<!-- <h2>{{product.product}}</h2>
+<h2>{{product.price}}</h2>
+<h2>{{product.stock}}</h2>
+<h2>{{product.info}}</h2>
+<h2>{{product.materials}}</h2> -->
+<div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <br>
+                    <br>
+                    <div class="col-md-5 col-md-offset-1">
+
+                        {{#each product.Images}}
+                             <img src="{{this.url}}" width="100%"/>
+                        {{/each}}
+                        
+                    </div>
+                    <div class="col-md-5">
+                        <h4>{{product.product}} </h4>
+                        <!-- <h5>Goat's Milk Soap</h5> -->
+                        <h4>Price: ${{product.price}}</h4>
+                        <p>{{product.info}}</p>
+                        <p><strong>Materials:</strong> {{product.materials}}</p>
+                        <hr>
+                  <!-- add form  -->
+                     <form method="POST" action="/add-to-cart/{{product.id}}">
+                        <div class="row text-right">
+                            <div class="col-md-6 text-right col-md-offset-1">
+                                <select name="quantityValue" class="form-control text-right" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn" id="addCart" type="submit">
+                                    <h6>ADD TO CART</h6>
+                            </div>
+                        </div>
+                     </form>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+
+

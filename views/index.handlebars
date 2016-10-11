@@ -1,0 +1,272 @@
+<header id="top" class="header">
+         
+        <div class="text-vertical-center">
+            <h1>CollegiateKups</h1>
+            <h3>Savor your college days daily
+            </h3>
+            <br>
+            <a href="#about" class="btn btn-dark btn-lg">Learn More</a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>
+Savor your RU days with delicious 
+</h2>
+                    <h1>Rutgers Kups! </h1>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2 class="serviceH2">AS IF PLAYING THE </br>FIRST FOOTBALL GAME WEREN'T ENOUGH...
+                    </br>RUTGERS NOW HAS ANOTHER COLLEGIATE FIRST</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-shopping-cart fa-stack-1x text-primary"></i>
+                                </span>
+                                <h3>
+                                    <strong>ORDER ONLINE</strong>
+                                </h3>
+                                <h4>Single Serve Coffee</h4>
+                                <a href="#shop" class="btn btn-success">SHOP</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-thumbs-up fa-stack-1x"></i>
+                            </span>
+                                <h3>
+                                    <strong>    COMPATIBILITY
+                                    </strong>
+                                </h3>
+                                <h4>Machine that accepts Keurig-type pods</h4>
+                                <a href="#compatibility" class="btn btn-success">LEARN MORE</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x text-primary"></i>
+                            </span>
+                                <h3>
+                                    <strong>CONTACT</strong>
+                                </h3>
+                                <h4>We’ll keep you posted on what’s next!</h4>
+                                <a href="#affiliate" class="btn btn-success">CONNECT</a>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <!-- <aside class="callout">
+        <div class="text-vertical-center">
+            <h1>Vertically Centered Text</h1>
+        </div>
+    </aside> -->
+
+    <section id="shop" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    
+                    <div class="row">
+                        {{# each products }}
+    <div class="row">
+        {{# each this }}
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="{{ this.imagePath }}" alt="..." class="img-responsive">
+                    <div class="caption">
+                        <h3>{{ this.title }}</h3>
+                        <p class="description">{{ this.description }}</p>
+                        <div class="clearfix">
+                            <div class="price pull-left">${{ this.price }}</div>
+                            <a href="/add-to-cart/{{this._id}}" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{/each}}
+
+
+                    </div>
+                    <!-- /.row (nested) -->
+                    
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    
+    <section id="compatibility" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>COMPATIBILITY</h2>
+                    <hr class="small">
+                     <div class="row">
+                        <div class="col-md-6 text-left">
+                         <p>
+                           Our single serve cups are designed to deliver a delicious beverage in any machine that accepts Keurig-type pods. Besides Keurig, there are several brewer brands which will deliver our delicious beverages on demand, including:  Bella, Black & Decker, Hamilton Beach, Mr. Coffee, MyBunn, and the most interesting new player: iCoffee.
+
+                            Got a new Keurig 2.0? Not to worry, Collegiate Kups will work in that, too….just take 2 minutes to make any of the following permanent adjustments:
+                            </br>
+
+                            1. Insert the “Freedom Clip”, the ingenious solution from the Rogers Family Coffee Company.  Get your clip for $1.99 <a href="https://www.coffeeicon.com/rogers-family-company/freedom-clip-for-the-keurig-20-2404">here</a>
+                            </br>
+                            2. Tape over the “evil eye” pod reader with a lid from Keurig’s own “2.0” cups.  There are dozens of quick youtube clips on this, but our favorite is <a href="https://www.youtube.com/watch?v=9e0yCq1AEeY">here</a>
+                        </p>
+
+                          
+                        </div>
+                        
+                        <div class="col-md-6">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/9e0yCq1AEeY" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        
+                    </div>
+                    <!-- /.row (nested) -->
+                   
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <section id="affiliate" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>More to come!</h2>
+                    <hr class="small">
+                      <p class="contactP">We’ll be rolling out additional varieties in the months ahead so please check back here or send us an email <a href="mailto:nfo@collegiatekups.com">(info@collegiatekups.com)</a>  and we’ll keep you posted on what’s next!</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="hovereffect">
+                       
+                                
+                                    <img class="img-responsive" src="img/block01.jpg">
+                              
+                            <div class="overlay">
+                                
+                                <h2>PRIDE</h2>
+                                
+
+                                <h3> 
+                                    "Her ardent spirit stirred and cheered me"
+                                </h3> 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="hovereffect">
+                            
+                               
+                                    <img class="img-responsive" src="img/block02.jpg">
+                                
+                            
+                            <div class="overlay">
+                                
+                                <h2>TRADITION</h2>
+                               
+                                <h3> 
+                                    "On the banks of the old Raritan"
+                                </h3> 
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="hovereffect">
+                       
+                                
+                                    <img class="img-responsive" src="img/block03.jpg">
+                              
+                            <div class="overlay">
+                                
+                                <h2>CELEBRATION</h2>
+                                
+
+                                <h3> 
+                                    "In that noisy town"
+                                </h3> 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="hovereffect">
+                            
+                               
+                                    <img class="img-responsive" src="img/block04.jpg">
+                                
+                            
+                            <div class="overlay">
+                                
+                                <h2>MEMORIES</h2>
+                               
+                                <h3> 
+                                    "Rutgers' name shall never die"
+                                </h3> 
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+                    <!-- /.row (nested) -->
+                    
+          
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
+            {{ successMsg }}
+        </div>
+    </div>
+</div>
+
+
