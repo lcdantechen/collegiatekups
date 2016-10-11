@@ -2,6 +2,7 @@
 var homeController = require('../home');
 var csrf = require('csurf');
 var csrfProtection = csrf();
+var passport = require('passport');
 
 var products = db.ITEMS;
 var users = db.user;
@@ -45,12 +46,19 @@ module.exports = function(app) {
   app.get('/', homeController.renderHome);
 /*render Signup page*/
   app.get('/signup', function (req, res, next) {
-   res.render('signup', {csrfToken: req.csrfToken()});
-});
+    var messages = req.flash('error');
+    res.render('signup', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
+});;
 
-  app.post('/signup', function (req, res, next) {
-   res.redirect('/');
-});
+  app.post('/signup', passport.authenticate('local.signup', {
+    successRedirect: '/profile',
+    failureRedirect: '/signup',
+    failureFlash: true
+  }));
+  //render profile page when user login
+  app.get('/profile', function(req, res, next) {
+    res.render('profile');
+  });
 
 	// render the about page 
 	app.get('/about', function(req, res) {
