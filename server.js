@@ -57,14 +57,6 @@ app.use(passport.session());
 //allows access to complete public domain
 app.use(express.static(__dirname + '/public'));
 
-/*app.use(session({
-  secret: 'speakeasyconservatory',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 60000 * 60 * 24 * 14
-  }
-}));*/
 
 //make session available for hbs
 app.use(function(req, res, next) {

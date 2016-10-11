@@ -39,12 +39,37 @@ var cartHelper = {
      return arr;
   }
 };
+//functions check if user logged in or not
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/');
+}
+
+function notLoggedIn(req, res, next) {
+    if (!req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/');
+}
+
 
 // render the index page 
 module.exports = function(app) {
   app.use(csrfProtection);
   app.get('/', homeController.renderHome);
 /*render Signup page*/
+  app.get('/profile', isLoggedIn, function (req, res, next) {
+     res.render('profile');
+  });
+  app.get('/logout', isLoggedIn, function (req, res, next) {
+    req.logout();
+    res.redirect('/');
+  })
+  app.use('/', notLoggedIn, function(req, res, next) {
+    next();
+  });
   app.get('/signup', function (req, res, next) {
     var messages = req.flash('error');
     res.render('signup', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
@@ -59,6 +84,26 @@ module.exports = function(app) {
   app.get('/profile', function(req, res, next) {
     res.render('profile');
   });
+
+  //render Signin page
+  app.get('/signin', function (req, res, next) {
+    var messages = req.flash('error');
+    res.render('signin', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
+});
+
+  app.post('/signin', passport.authenticate('local.signin', {
+    failureRedirect: '/signin',
+    failureFlash: true
+}), function (req, res, next) {
+    if (req.session.oldUrl) {
+        var oldUrl = req.session.oldUrl;
+        req.session.oldUrl = null;
+        res.redirect(oldUrl);
+    } else {
+        res.redirect('/profile');
+    }
+});
+  
 
 	// render the about page 
 	app.get('/about', function(req, res) {

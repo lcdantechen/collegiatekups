@@ -53,19 +53,36 @@
             <li>
                 <a href="/#affiliate" onclick=$("#menu-close").click();>Contact Us</a>
             </li>
-            <!-- <li>
-compatibility                <a href="#contact" onclick=$("#menu-close").click();>联系我们</a>
-            </li> -->
+            
         </ul>
     </nav>
 <!-- DIV FOR USERS -->
 <div id="userAuth">
    
     <ul>
-        <li><a href="#"> LOG IN </a> </li>
-        <li><a href="#"> REGISTER </a> </li>
-        <li><a href="/cart"> CART </a> </li>
+        {{# if login }}
+            <li><a href="/profile">User Account</a></li>
+           
+            <li><a href="/logout">Logout</a></li>
+
+            <li>
+         <a href="/shopping-cart/">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
+            <span class="badge">{{session.cart.totalQty}}</span>
+         </a>
+        </li>
+        {{ else }}
+            <li><a href="/signup">Sign up</a></li>
+            <li><a href="/signin">Sign in</a></li>
+            <li>
+         <a href="/shopping-cart/">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
+            <span class="badge"></span>
+         </a>
+        </li>
+        {{/if}}
     </ul>
+   
 </div>
     <!-- Header -->
     
