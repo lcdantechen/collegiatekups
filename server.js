@@ -1,19 +1,24 @@
 //Call Dependencies
 var express = require('express');
-var app = express();
 require('dotenv').config();
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var methodOverride = require('method-override');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var models = global.db = require('./models');
+/*var models = global.db = require('./models');*/
 //connect with mongoose
 var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('passport');
 var flash = require('connect-flash');
 var validator = require('express-validator');
+var MongoStore = require('connect-mongo')(session);
+
+var routes = require('./controllers/routes/index');
+var userRoutes = require('./controllers/routes/user');
+
+var app = express();
 
 /*mongoose.connect('localhost:27017/collegiatekups');*/
 mongoose.connect('mongodb://localhost/collegiatekups');
@@ -46,7 +51,7 @@ app.use(session({
   secret: 'mysupersecret', 
   resave: false, 
   saveUninitialized: false,
-  /*store: new MongoStore({ mongooseConnection: mongoose.connection }),*/
+  store: new MongoStore({ mongooseConnection: mongoose.connection }),
   cookie: { maxAge: 180 * 60 * 1000 }
 }));
 app.use(flash());
@@ -64,10 +69,14 @@ app.use(function(req, res, next) {
   res.locals.session = req.session;
   next();
 });
-// Set routes 
-var htmlRoutes =require('./controllers/routes/htmlRoutes')(app);
 
-var apiRoutes = require('./controllers/routes/apiRoutes')(app);
+
+// Set routes 
+app.use('/', routes);
+app.use('/', userRoutes);
+/*var htmlRoutes =require('./controllers/routes/htmlRoutes')(app);
+
+var addCartRoutes =require('./controllers/routes/addCartRoutes.js')(app);*/
 //set the port connection. Either heroku or local host 
 
 
