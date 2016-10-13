@@ -26,6 +26,35 @@ var cartHelper = {
      cart.plusShipping = cart.totalPrice + 5;
 
   },
+
+   /*reduceByOne : function(id) {
+        this.items[id].qty--;
+        this.items[id].price -= this.items[id].item.price;
+        this.totalQty--;
+        this.totalPrice -= this.items[id].item.price;
+        this.plusShipping -= this.items[id].item.price;
+
+        if (this.items[id].qty <= 0) {
+            delete this.items[id];
+        }
+    },*/
+
+    /*increaseByOne : function(id) {
+        this.items[id].qty++;
+        this.items[id].price += this.items[id].item.price;
+        this.totalQty++;
+        this.totalPrice += this.items[id].item.price;
+        this.plusShipping += this.items[id].item.price;
+        
+    },*/
+
+/*
+  removeItem : function(id) {
+        this.totalQty -= this.items[id].qty;
+        this.totalPrice -= this.items[id].price;
+        delete this.items[id];
+    },*/
+
   generateArray : function(cart) {
      var arr = [];
      for (var id in cart.items) {
@@ -70,6 +99,15 @@ router.get('/reduce/:id', function(req, res, next) {
     var cart = new Cart(req.session.cart ? req.session.cart : {});
 
     cart.reduceByOne(productId);
+    req.session.cart = cart;
+    res.redirect('/cart');
+});
+
+router.get('/increase/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.increaseByOne(productId);
     req.session.cart = cart;
     res.redirect('/cart');
 });

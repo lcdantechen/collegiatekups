@@ -8,7 +8,7 @@
 </div>
  
 
-
+{{# if cartItems }}
 
 <div class="container">
 
@@ -34,6 +34,16 @@
               <td>${{this.item.price}}</td>
               <td>{{this.qty}}</td>
               <td>${{this.price}}</td>
+              <td> <!-- button -->
+                        <div class="btn-group">
+                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                               <li><a href="/increase/{{this.item._id}}">Increase by 1</a></li>
+                                <li><a href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
+                                <li><a href="/remove/{{this.item._id}}">Remove All</a></li>
+                            </ul>
+                        </div>
+              </td>
           
             </tr>
            {{/each}}  
@@ -76,10 +86,17 @@
         <a href="/checkout" type="button" class="btn btn-danger" style="padding:15px; margin-bottom:40px;">Checkout</a>
 
    </div>
-
+  {{ else }}
+    <div class="row">
+        <div class="text-center col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <h3>There is no Items in Cart, Let's drink some coffee!</h3>
+            <img src="/img/coffee.gif">
+        </div>
+    </div>
+{{/if}}
 </div>
 
-</div>
+
 
 <!-- sssssss -->
 
