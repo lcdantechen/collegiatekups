@@ -21,7 +21,8 @@ var userRoutes = require('./controllers/routes/user');
 var app = express();
 
 /*mongoose.connect('localhost:27017/collegiatekups');*/
-mongoose.connect('mongodb://localhost/collegiatekups');
+/*mongoose.connect('mongodb://localhost/collegiatekups');*/
+mongoose.connect('mongodb://heroku_bht27xgp:bc3f7217h43783hjousrr3dqmi@ds057476.mlab.com:57476/heroku_bht27xgp');
 var db = mongoose.connection;
 require('./config/passport');
 // show any mongoose errors
