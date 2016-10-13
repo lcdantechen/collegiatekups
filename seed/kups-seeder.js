@@ -1,6 +1,6 @@
 var Product = require('../models/kup');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/collegiatekups');
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/collegiatekups');
 
 
 var products = [
