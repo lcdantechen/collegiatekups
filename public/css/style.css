@@ -538,3 +538,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 5px solid #d65431;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 2px solid #d65431;
+}
+
+.content {
+  font-size:1.3em;
+}

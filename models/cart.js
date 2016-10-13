@@ -2,8 +2,9 @@ module.exports = function Cart(oldCart) {
     this.items = oldCart.items || {};
     this.totalQty = oldCart.totalQty || 0;
     this.totalPrice = oldCart.totalPrice || 0;
+    this.plusShipping = 0;
 
-    this.add = function(item, id) {
+    /*this.add = function(item, id) {
         var storedItem = this.items[id];
         if (!storedItem) {
             storedItem = this.items[id] = {item: item, qty: 0, price: 0};
@@ -12,7 +13,28 @@ module.exports = function Cart(oldCart) {
         storedItem.price = storedItem.item.price * storedItem.qty;
         this.totalQty++;
         this.totalPrice += storedItem.item.price;
-    };
+    };*/
+
+  /*  this.add = function(cart, item, qty, id) {
+          var storedItem = cart.items[id];
+     console.log('storedItem', storedItem);
+     console.log(item, qty, id)
+     if (!storedItem) {
+         storedItem = cart.items[id] = {item: item, qty: qty, price: 0};
+         storedItem.price = storedItem.item.price * storedItem.qty;
+         cart.totalQty += qty;
+         cart.totalPrice += storedItem.price;
+     } else {
+        storedItem.qty += qty;
+        storedItem.price = storedItem.item.price * storedItem.qty;
+        cart.totalQty += qty;
+        cart.totalPrice += storedItem.item.price * qty;
+
+     }
+
+     cart.plusShipping = cart.totalPrice + 5;
+
+  };*/
 
     this.reduceByOne = function(id) {
         this.items[id].qty--;
