@@ -98,7 +98,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
         order.save(function(err, result) {
             req.flash('success', 'Successfully bought product!');
             req.session.cart = null;
-            res.redirect('/profile');
+            res.redirect('/');
         });
     }); 
 });
@@ -110,5 +110,6 @@ function isLoggedIn(req, res, next) {
         return next();
     }
     req.session.oldUrl = req.url;
-    res.redirect('/user/signin');
+    req.flash('error', 'Please sign in first.');
+    res.redirect('/signin');
 }

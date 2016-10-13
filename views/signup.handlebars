@@ -1,4 +1,45 @@
 
+    
+<div class="container">     
+     
+
+        
+          <div class="login-page">
+           <a href="/"><img src="/img/packlogo.png" class="logo"></a>
+           
+            {{#if hasErrors}}
+                <div class="alert alert-danger">
+                    {{# each messages }}
+                        <p>{{this}}</p>
+                    {{/each}}
+                </div>
+            {{/if}}
+           <div class="form">
+            <form action="/signup" method="post">
+                    <input type="text" id="email" name="email" class="form-control" placeholder="email address">
+        
+                    <input type="password" id="password" name="password" class="form-control"  placeholder="password">
+                
+                <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+
+                <p class="message">Already registered? <a href="/signin">Sign In</a></p>
+            </form>
+         </div>
+        </div>
+            
+    
+ </div>  
+
+
+
+
+
+
+
+
+
+<!-- 
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
         <h1>Sign Up</h1>
@@ -22,4 +63,4 @@
             <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
     </div>
-</div>
+</div> -->
