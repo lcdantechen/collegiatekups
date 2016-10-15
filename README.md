@@ -8,11 +8,11 @@ AS IF PLAYING THE FIRST FOOTBALL GAME WEREN'T ENOUGH... RUTGERS NOW HAS ANOTHER 
 
 ##Code Example
 
-<img width="600"  src="/img/code01.png">
+<img width="600"  src="http://alichenchen.com/wp-content/uploads/2016/10/code01.png">
 
-<img width="600"  src="/img/code02.png">
+<img width="600"  src="http://alichenchen.com/wp-content/uploads/2016/10/code02.png">
 
-<img width="600"  src="/img/code03.png">
+<img width="600"  src="http://alichenchen.com/wp-content/uploads/2016/10/code03.png">
  
 
 ##Installation
