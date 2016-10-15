@@ -59,6 +59,7 @@ module.exports = function Cart(oldCart) {
     this.removeItem = function(id) {
         this.totalQty -= this.items[id].qty;
         this.totalPrice -= this.items[id].price;
+        this.plusShipping = this.plusShipping - this.items[id].price + 5;
         delete this.items[id];
     };
     

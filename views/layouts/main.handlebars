@@ -5,11 +5,12 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <meta name="description" content="">
     <meta name="author" content="">
 
     <title>CollegiateKups</title>
+    <link rel="icon" href="../img/kupModle.png">
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -67,7 +68,7 @@
 
             <li>
          <a href="/cart">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;Cart&nbsp;
             <span class="badge">{{session.cart.totalQty}}</span>
          </a>
         </li>
@@ -76,8 +77,8 @@
             <li><a href="/signin">Sign in</a></li>
             <li>
          <a href="/cart">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
-            <span class="badge"></span>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;Cart&nbsp;
+            <span class="badge">{{session.cart.totalQty}}</span>
          </a>
         </li>
         {{/if}}

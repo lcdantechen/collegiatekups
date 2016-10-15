@@ -32,18 +32,9 @@
               <td><img style="max-height:40px;" src="{{this.item.imagePath}}"/></td>
               <td style="text-align:left;">{{this.item.title}}</td>
               <td>${{this.item.price}}</td>
-              <td>{{this.qty}}</td>
-              <td>${{this.price}}</td>
-              <td> <!-- button -->
-                        <div class="btn-group">
-                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                               <li><a href="/increase/{{this.item._id}}">Increase by 1</a></li>
-                                <li><a href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
-                                <li><a href="/remove/{{this.item._id}}">Remove All</a></li>
-                            </ul>
-                        </div>
-              </td>
+              <td>{{this.qty}}&nbsp;&nbsp; <a href="/increase/{{this.item._id}}"> <i class="fa fa-caret-up" aria-hidden="true"></i></a> <a href="/reduce/{{this.item._id}}"><i class="fa fa-caret-down" aria-hidden="true"></i</a> </td>
+              <td>${{this.price}}&nbsp;&nbsp;  <a href="/remove/{{this.item._id}}">Remove</a></td>
+              
           
             </tr>
            {{/each}}  
@@ -76,15 +67,16 @@
             </tr>
             <tr>
               <td>Order Total</td>
-              <td>${{CartTotals.cart.plusShipping}}</td>
+              <td style="color:#960000;"><strong>${{CartTotals.cart.plusShipping}}</strong></td>
               
             </tr>
             
           </tbody>
         </table>
 
-        <a href="/checkout" type="button" class="btn btn-danger" style="padding:15px; margin-bottom:40px;">Checkout</a>
+        <a href="/checkout" type="button" class="btn btn-danger" style="padding:15px; margin-bottom:40px;font-size:1.1em;"><strong>Checkout</strong></a>
 
+   </div>
    </div>
   {{ else }}
     <div class="row">

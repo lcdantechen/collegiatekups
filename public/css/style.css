@@ -554,3 +554,7 @@ body {
 .content {
   font-size:1.3em;
 }
+
+.badge {
+  background-color: #960000;
+}
