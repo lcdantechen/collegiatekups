@@ -147,6 +147,7 @@ router.get('/cart', function(req, res) {
       CartTotals: CartTotals
 
     });
+    
   });
 
 /*router.get('/checkout', isLoggedIn, function(req, res, next) {
