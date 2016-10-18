@@ -1,8 +1,8 @@
 module.exports = function Cart(oldCart) {
-    this.items = oldCart.items || {};
-    this.totalQty = oldCart.totalQty || 0;
-    this.totalPrice = oldCart.totalPrice || 0;
-    this.plusShipping = oldCart.totalPrice || 0;
+    this.items = oldCart && oldCart.items || {};
+    this.totalQty = oldCart && oldCart.totalQty || 0;
+    this.totalPrice = oldCart && oldCart.totalPrice || 0;
+    this.plusShipping = oldCart && oldCart.totalPrice || 0;
 
     /*this.add = function(item, id) {
         var storedItem = this.items[id];
