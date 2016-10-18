@@ -1,5 +1,5 @@
 
-#CollegiateKups
+#CollegiateKups Final Project
 
 ##Synopsis
 
