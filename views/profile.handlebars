@@ -29,7 +29,7 @@
            {{#each orders}}
               <td><img style="max-height:40px;" src="{{this.item.imagePath}}"/></td>
               <td style="text-align:left;">{{this.name}}</td>
-              <td>${{this.address}}</td>
+              <td>{{this.address}}</td>
               <td>
 		              {{#each this.cart.items}}
 		                <span class="badge">{{this.qty}}</span>		                <img style="max-width:60px;" src="{{this.item.imagePath}}">&nbsp;&nbsp;&nbsp;
