@@ -23,6 +23,7 @@ AS IF PLAYING THE FIRST FOOTBALL GAME WEREN'T ENOUGH... RUTGERS NOW HAS ANOTHER 
 4. Run npm install with following dependencies: sequelize, express, body-parser, express-handlebars, and mysql.
 5. Create handlebars.
 6. Create folder models.
+   cd into seed folder and run node kups-seeder.js 
 7. Connect Mongoose
 8. Create seeder file.
 9. Seed Mongoose
